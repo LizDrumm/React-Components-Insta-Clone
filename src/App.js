@@ -32,6 +32,9 @@ const [posts, setPosts]= useState (dummyData)
       The callback passed into `map` performs the following logic:
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
+
+
+        NOTES:in Post.js, likePost gets assigned a new callback function & passes in the individual post.id. and its invoked when you click the icon in LikeSection.js
      */
 
      setPosts (posts.map(pst =>{
@@ -48,7 +51,7 @@ const [posts, setPosts]= useState (dummyData)
       {/* Add SearchBar and Posts here to render them */}
       {/* Check the implementation of each component, to see what props they require, if any! */}
       <SearchBar/>
-      <Posts likePost = {likePost} posts = {posts}/>
+      <Posts likePost = {likePost} posts = {posts}/> 
     </div>
   );
 };
