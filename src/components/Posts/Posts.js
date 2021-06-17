@@ -1,6 +1,9 @@
-import React from 'react';
+//Posts- Post- Post Header- Like Section
+
+import React, {useState} from 'react';
 import Post from './Post';
 import './Posts.css';
+
 
 const Posts = (props) => {
   // 🔥 Make sure the parent of Posts is passing the right props!
@@ -10,8 +13,13 @@ const Posts = (props) => {
     <div className='posts-container-wrapper'>
       {/* Map through the posts array returning a Post component at each iteration */}
       {/* Check the implementation of Post to see what props it requires! */}
+      {posts.map((post, index) => { //mapping through all of the posts 
+        return <Post key={post.id} post={post} likePost={likePost}/> //inside of Post component give it the props of post 
+      })}
     </div>
   );
 };
+  
 
 export default Posts;
+
